@@ -1,3 +1,8 @@
+import UI from './UserBooks.js';
+import Storage from './Storage.js';
+// import { Navigation } from './Navigation.js';
+
+// book constructor
 class Book {
   constructor(title, author, id) {
     this.title = title;
@@ -5,70 +10,6 @@ class Book {
     this.id = id;
   }
 }
-
-class UI {
-  static testDisplayBooks() {
-    const books = Storage.getBook();
-
-    books.forEach((book) => {
-      UI.bookDisplayList(book);
-    });
-  }
-
-  static bookDisplayList(book) {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-                        <td>${book.author}</td>
-                        <td>${book.title}</td>
-                        <td><a href="#" class="remove">remove</a></td> `;
-    const tableList = document.querySelector('.book-List');
-    tableList.appendChild(row);
-  }
-
-  static clearFields() {
-    document.getElementById('title').value = '';
-    document.getElementById('author').value = '';
-  }
-}
-
-// storing books in localStorage
-class Storage {
-  static getBook() {
-    let bookStore;
-    if (localStorage.getItem('bookStore') === null) {
-      bookStore = [];
-    } else {
-      bookStore = JSON.parse(localStorage.getItem('bookStore'));
-    }
-
-    return bookStore;
-  }
-
-  static addToLocalStorage(book) {
-    const bookStore = Storage.getBook();
-    bookStore.push(book);
-    localStorage.setItem('bookStore', JSON.stringify(bookStore));
-  }
-
-  static removeBooks(titleVal) {
-    const bookStore = Storage.getBook();
-    // console.log(book.title);
-    // console.log(tileVal);
-
-    bookStore.forEach((book, index) => {
-      if (book.title == titleVal) {
-        bookStore.splice(index, 1);
-      }
-    });
-
-    // localStorage.clear()
-    localStorage.setItem('bookStore', JSON.stringify(bookStore));
-  }
-}
-
-// display the book test testDisplay()
-
-document.addEventListener('DOMContentLoaded', UI.testDisplayBooks());
 
 // HANDLING THE FORM BY OREVENTING THE DEFAULT AND ADD AND DISPLAY BOOKS
 const form = document.getElementById('Form');
@@ -112,7 +53,6 @@ form.addEventListener('submit', (e) => {
     // remove book from the list
     document.querySelector('.book-List').addEventListener('click', (e) => {
       const val = e.target;
-      console.log(e.target);
       if (val.classList.contains('remove')) {
         val.parentElement.parentElement.remove();
       }
@@ -125,4 +65,51 @@ form.addEventListener('submit', (e) => {
   setTimeout(() => {
     error.textContent = '';
   }, 3000);
+});
+
+// display the book test testDisplay()
+
+document.addEventListener('DOMContentLoaded', UI.testDisplayBooks());
+
+// add naviagtion
+
+const list1 = document.querySelector('.list1');
+const list2 = document.querySelector('.list2');
+const list3 = document.querySelector('.list3');
+
+// tagging elements
+const addBook = document.getElementById('form');
+const List = document.getElementById('list');
+const contact = document.getElementById('contact');
+
+list1.addEventListener('click', () => {
+  // show focus color
+  list3.style.color = '#000';
+  list2.style.color = '#000';
+  list1.style.color = 'rgba(43, 64, 250,1)';
+
+  // navigation
+  List.classList.remove('hide-nav');
+  addBook.classList.add('hide-nav');
+  contact.classList.add('hide-nav');
+});
+
+list2.addEventListener('click', () => {
+  list3.style.color = '#000';
+  list2.style.color = 'rgba(43, 64, 250,1)';
+  list1.style.color = '#000';
+
+  addBook.classList.remove('hide-nav');
+  contact.classList.add('hide-nav');
+  List.classList.add('hide-nav');
+});
+
+list3.addEventListener('click', () => {
+  list3.style.color = 'rgba(43, 64, 250,1)';
+  list2.style.color = '#000';
+  list1.style.color = '#000';
+
+  contact.classList.remove('hide-nav');
+  List.classList.add('hide-nav');
+  addBook.classList.add('hide-nav');
 });
