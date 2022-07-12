@@ -1,15 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Project Name
+Awesome books
 
 > Description the project.
+In this project i built the Awesome books using javascript modules( for import and export) which will run using a server and also importing the date using Luxon
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JAVASCRIPT
+- LUXON
+- LINTER
 
 ## Live Demo (if available)
 
@@ -18,21 +22,30 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running:
+
+1. Clone this repository or download the zip folder:
+
+**``git clone https://github.com/Pamphilemkp/Awesome-book-App.git``**
+
+2. Navigate to the location of the folder in your machine:
+
+**``you@your-Pc-name:~$ cd <folder>``**
+
+To get a local copy up and running follow these simple example steps.
 
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Prerequisites: 
+Any kind of browser. 
 
-### Setup
+### Setup:
+    1. Clone the repository (git clone https://github.com/Pamphilemkp/Awesome-book-App.git)
+    2. Then open the folder in your local environment 
+    3. Choose the file with a name index.html file
+    4. Run index.html file using any browser in your local environment using a live server on visual studio or any other live servers
 
-### Install
-
-### Usage
-
-### Run tests
 
 ### Deployment
 
@@ -40,17 +53,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Author**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+   - GitHub:[@pamphilemkp](https://github.com/pamphilemkp)
+   - Twitter:[@pamphilemkp](https://github.com/PamphileMusonda)
+   - LinkedIn:[@pamphilemkp](https://github.com/PamphileMusonda-2bb8a9237)
 
 ## 🤝 Contributing
 

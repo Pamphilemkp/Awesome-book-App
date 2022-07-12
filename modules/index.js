@@ -1,13 +1,12 @@
 import UI from './UserBooks.js';
 import Storage from './Storage.js';
-// import { Navigation } from './Navigation.js';
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
 
 // book constructor
 class Book {
-  constructor(title, author, id) {
+  constructor(title, author) {
     this.title = title;
     this.author = author;
-    this.id = id;
   }
 }
 
@@ -19,7 +18,6 @@ form.addEventListener('submit', (e) => {
 
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  let id = 0;
   const error = document.querySelector('.error-message');
 
   // check if the input are empty and display the errors messsages
@@ -35,8 +33,7 @@ form.addEventListener('submit', (e) => {
     error.classList.remove('succes');
   } else {
     // display the book received from the form
-    const book = new Book(title, author, id);
-    id += 1;
+    const book = new Book(title, author);
     UI.bookDisplayList(book);
 
     // add to LocalStorage
@@ -49,22 +46,22 @@ form.addEventListener('submit', (e) => {
 
     // clear the fields
     UI.clearFields();
-
-    // remove book from the list
-    document.querySelector('.book-List').addEventListener('click', (e) => {
-      const val = e.target;
-      if (val.classList.contains('remove')) {
-        val.parentElement.parentElement.remove();
-      }
-      // remove book from storage
-      const titleVal = val.parentElement.previousElementSibling.innerText;
-      Storage.removeBooks(titleVal);
-    });
   }
 
   setTimeout(() => {
     error.textContent = '';
   }, 3000);
+});
+
+// remove book from the list
+document.querySelector('.book-List').addEventListener('click', (e) => {
+  const val = e.target;
+  if (val.classList.contains('remove')) {
+    val.parentElement.parentElement.remove();
+  }
+  // remove book from storage
+  const titleVal = val.parentElement.previousElementSibling.innerText;
+  Storage.removeBooks(titleVal);
 });
 
 // display the book test testDisplay()
@@ -113,3 +110,13 @@ list3.addEventListener('click', () => {
   List.classList.add('hide-nav');
   addBook.classList.add('hide-nav');
 });
+
+/// Date and time with luxon
+
+const liveTime = () => {
+  const time = document.getElementById('time');
+  const date = DateTime.now();
+  time.innerHTML = date.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+};
+
+setInterval(liveTime, 1000);
