@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>Awesome books </title>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="navigation">
+                    <h1>Awesome Books</h1>
+                    <ul>
+                        <li><a href="#list"  class="border list1">List</a></li>
+                        <li><a href="#form"  class="border list2">Add Book</a></li>
+                        <li ><a href="#contact-info" class="border list3">Contact</a></li>
+                    </ul>
+            </div>
+        </nav>
+            <div class="timer">
+                <p id="time"></p>
+            </div>
+            
+            <section class="top" id="list">
+                <h1>All Awesome Books</h1>
+
+                <table id="tableId">
+
+                    <thead>
+                        <tr>
+                        <th>AUTHOR</th>
+                        <th>TITLE</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody class="book-List">
+                        
+                    </tbody>
+                </table>
+            </section>
+                <br>
+            
+                <section class="form hide-nav" id="form">
+                    <hr class="line">
+                    <h1 id="add-new">Add a new book</h1>
+
+                    <!-- error message -->
+                     <p class="error-message"></p> 
+
+                    <form id="Form" action="#" class="add-book">
+
+                        <div class="title">
+                            <input type="text" placeholder="Title" id="title" />
+                        </div>
+                        <br>
+
+                        <div class="author">
+                                <input type="text" placeholder="Author" id="author" /> 
+                        </div>
+                        <br>
+                            <button type="submit" id="add">Add</button>
+                    </form>
+                </section>
+            
+                <section class="hide-nav" id="contact">
+                <div  id="contact-info">
+                    <h2>Contact information</h2>
+            
+                    <p>Do you have any question or just want to say "hello"? <br>
+                    you can reach out to us:
+                    </p>
+            
+                    <ul>
+                        <li>Our e-mail pamphilemkp@gmail.com</li>
+                        <li>Our phone number: +90 (533) 88 29 657</li>
+                        <li>Our adress street name 22, 84502 City, Country</li>
+                    </ul>
+                </div>
+                </section>
+            
+                <div class="footer-section">
+                    <div class="footer">
+                        <p> Copyright ...</p>
+                        
+                    </div>
+                </div>
+
+    </div>
+
+
+
+         <script type="module" src="./modules/index.js"></script>
+        <!-- <script src=""></script> -->
+    </body>
+</html>
+
