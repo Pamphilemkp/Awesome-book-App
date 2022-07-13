@@ -1,7 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-Awesome books
+# Awesome books
 
 > Description the project.
 In this project i built the Awesome books using javascript modules( for import and export) which will run using a server and also importing the date using Luxon
